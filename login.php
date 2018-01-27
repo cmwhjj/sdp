@@ -7,8 +7,10 @@
 		$customer_id = mysqli_fetch_assoc($login_result)['customer_id'];
 		mysqli_query($con,"INSERT INTO loginrecord(customer_id,login_success) VALUES ($customer_id,1)");
 		if (mysqli_affected_rows($con) > 0) {
-			echo '<script>alert("Successfully logged in");</script>';
+			$_SESSION['mySession']= $customer_id;
 			echo '<script>window.location.replace("index.php");</script>';	
+		} else {
+			echo '<script>alert("Incorrect username or password");</script>';
 		}
 		
 
