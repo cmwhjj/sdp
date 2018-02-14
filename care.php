@@ -406,34 +406,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--footer-->
 <div class="footer">
 	<div class="container">
-		<div class="col-md-3 footer-grid">
-			<h3>About Us</h3>
-			<p>Nam libero tempore, cum soluta nobis est eligendi 
-				optio cumque nihil impedit quo minus id quod maxime 
-				placeat facere possimus.</p>
-		</div>
-		<div class="col-md-3 footer-grid ">
-			<h3>Menu</h3>
-			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="kitchen.php">Kitchen</a></li>
-				<li><a href="care.php">Personal Care</a></li>
-				<li><a href="hold.php">Household</a></li>						 
-				<li><a href="codes.php">Short Codes</a></li> 
-				<li><a href="contact.php">Contact</a></li>
-			</ul>
-		</div>
-		<div class="col-md-3 footer-grid ">
-			<h3>Customer Services</h3>
-			<ul>
-				<li><a href="shipping.php">Shipping</a></li>
-				<li><a href="terms.php">Terms & Conditions</a></li>
-				<li><a href="faqs.php">Faqs</a></li>
-				<li><a href="contact.php">Contact</a></li>
-				<li><a href="offer.php">Online Shopping</a></li>						 
-				 
-			</ul>
-		</div>
+	
+	
 		<div class="col-md-3 footer-grid">
 			<h3>My Account</h3>
 			<ul>

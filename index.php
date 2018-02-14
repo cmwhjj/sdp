@@ -93,6 +93,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<div class="container">
 			<div class="spec ">
 				<h3>Latest Books</h3>
+			 
 				<div class="ser-t">
 					<b></b>
 					<span><i></i></span>
@@ -106,7 +107,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 								<div class="col-m">
 								
 								<a href="#" data-toggle="modal" data-target="#myModal<?php echo $book['book_id'];?>" class="offer-img">
-										<img src="images/of16.png" class="img-responsive" alt="">
+										<img src="untitled.png" class="img-responsive" alt="">
 									</a>
 									<div class="mid-1">
 										<div class="women">
@@ -140,28 +141,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<h3>About Us</h3>
 			<p>This is the best book store you can find in KL area and also guarantee the price of the books are cheapest price in KL area.</p>
 		</div>
-		<div class="col-md-3 footer-grid ">
-			<h3>Menu</h3>
-			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="kitchen.php">Kitchen</a></li>
-				<li><a href="care.php">Personal Care</a></li>
-				<li><a href="hold.php">Household</a></li>						 
-				<li><a href="codes.php">Short Codes</a></li> 
-				<li><a href="contact.php">Contact</a></li>
-			</ul>
-		</div>
-		<div class="col-md-3 footer-grid ">
-			<h3>Customer Services</h3>
-			<ul>
-				<li><a href="shipping.php">Shipping</a></li>
-				<li><a href="terms.php">Terms & Conditions</a></li>
-				<li><a href="faqs.php">Faqs</a></li>
-				<li><a href="contact.php">Contact</a></li>
-				<li><a href="offer.php">Online Shopping</a></li>						 
-				 
-			</ul>
-		</div>
+	
+		
 		<div class="col-md-3 footer-grid">
 			<h3>My Account</h3>
 			<ul>
@@ -173,7 +154,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</div>
 		<div class="clearfix"></div>
 			<div class="footer-bottom">
-				<h2 ><a href="index.php"><b>T<br>H<br>E</b>Big Store<span>The Best Supermarket</span></a></h2>
+				<h2 ><a href="index.php"><b>T<br>H<br>E</b>APU BOOK Store<span>APU BOOK STORE</span></a></h2>
 				<p class="fo-para">		</p>
 				<ul class="social-fo">
 					<li><a href="#" class=" face"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -276,7 +257,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						<div class="modal-body modal-spa">
 								<div class="col-md-5 span-2">
 											<div class="item">
-												<img src="images/of.png" class="img-responsive" alt="">
+												<img src="images.jpg" width="100" height="100" class="img-responsive" alt="">
 											</div>
 								</div>
 								<div class="col-md-7 span-1 ">

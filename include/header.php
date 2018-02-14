@@ -9,7 +9,10 @@
 	$genre_result = mysqli_query($con, "SELECT * FROM genre");
 ?>
 
+<!DOCTYPE html>
+<html>
 
+<body style = "background-color:#B8C4BD;">
 <div class="header">
 
 		<div class="container">
@@ -31,7 +34,7 @@
 					
 					
 					<li><a href="about.php" ><i class="fa fa-file-text-o" aria-hidden="true"></i>Order History</a></li>
-					<li><a href="shipping.php" ><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>
+			
 				</ul>	
 			</div>
 			
@@ -92,3 +95,5 @@
 					
 				</div>			
 </div>
+</body>
+</html>
