@@ -408,19 +408,11 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<div class="container">
 	
 	
-		<div class="col-md-3 footer-grid">
-			<h3>My Account</h3>
-			<ul>
-				<li><a href="login.php">Login</a></li>
-				<li><a href="register.php">Register</a></li>
-				<li><a href="wishlist.php">Wishlist</a></li>
-				
-			</ul>
-		</div>
+		
 		<div class="clearfix"></div>
 			<div class="footer-bottom">
 				<h2 ><a href="index.php"><b>T<br>H<br>E</b>Big Store<span>The Best Supermarket</span></a></h2>
-				<p class="fo-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+				
 				<ul class="social-fo">
 					<li><a href="#" class=" face"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 					<li><a href="#" class=" twi"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

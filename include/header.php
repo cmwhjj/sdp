@@ -18,7 +18,7 @@
 		<div class="container">
 			
 			<div class="logo">
-				<h1 ><a href="index.php"><b>T<br>H<br>E</b>Book Store<span>The Best Book Store </span></a></h1>
+				<h1 ><a href="index.php"><b>T<br>H<br>E</b>Book Store<span>The APU Book Store </span></a></h1>
 			</div>
 			<div class="head-t">
 				<ul class="card">

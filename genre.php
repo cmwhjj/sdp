@@ -1,5 +1,6 @@
 <?php
 	include "include/connection.php";
+	
 	$genre_id = $_GET['id'];
 	$genre_result = mysqli_query($con, "SELECT * FROM genre WHERE genre_id = " . $genre_id);
 	$genre_name = mysqli_fetch_array($genre_result)['genre_name'];
@@ -81,15 +82,15 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-           <a href="kitchen.php"><img class="first-slide" src="images/ba.jpg" alt="First slide"></a>
+           <a href="#"><img class="first-slide" src="images/Book-1600x450.jpg" alt="First slide"></a>
        
         </div>
         <div class="item">
-          <a href="care.php"> <img class="second-slide " src="images/ba1.jpg" alt="Second slide"></a>
+          <a href="#"> <img class="second-slide " src="images/blog-booksdesktitle.jpg" alt="Second slide"></a>
          
         </div>
         <div class="item">
-           <a href="hold.php"><img class="third-slide " src="images/ba2.jpg" alt="Third slide"></a>
+           <a href="#"><img class="third-slide " src="images/17_Theses-1-1-1600x450.jpg" alt="Third slide"></a>
           
         </div>
       </div>
@@ -112,11 +113,11 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<div class="col-md-3 pro-1">
 						<div class="col-m">
 						<a href="#" data-toggle="modal" data-target="#myModal<?php echo $book['book_id']; ?>" class="offer-img">
-								<img src="images/of24.png" class="img-responsive" alt="">
+								<img src="images/<?php echo $book['book_id']; ?>.jpg" class="img-responsive" alt="">
 							</a>
 							<div class="mid-1">
 								<div class="women">
-									<h6><a href="single.php"><?php echo $book['book_name']; ?></a></h6>							
+									<h6><a href="single.php?id=<?php echo $book['book_id']; ?>"><?php echo $book['book_name']; ?></a></h6>							
 								</div>
 								<div class="mid-2">
 									<p ><em class="item_price">RM <?php echo $book['book_price']; ?></em></p>
@@ -126,7 +127,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<div class="clearfix"></div>
 								</div>
 									<div class="add">
-								   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="24" data-name="Wheat" data-summary="summary 24" data-price="6.00" data-quantity="1" data-image="images/of24.png">Add to Cart</button>
+								   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="<?php echo $book['book_id']; ?>" data-name="<?php echo $book['book_name']; ?>" data-summary="<?php echo $book['book_name']; ?>" data-price="<?php echo $book['book_price']; ?>" data-quantity="1" data-image="images/<?php echo $book['book_id']; ?>.jpg">Add to Cart</button>
 								</div>
 							</div>
 						</div>
@@ -141,45 +142,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<div class="container">
 		<div class="col-md-3 footer-grid">
 			<h3>About Us</h3>
-			<p>Nam libero tempore, cum soluta nobis est eligendi 
-				optio cumque nihil impedit quo minus id quod maxime 
-				placeat facere possimus.</p>
+			<p>This is the best book store you can find in KL area and also guarantee the price of the books are cheapest price in KL area.</p>
 		</div>
-		<div class="col-md-3 footer-grid ">
-			<h3>Menu</h3>
-			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="kitchen.php">Kitchen</a></li>
-				<li><a href="care.php">Personal Care</a></li>
-				<li><a href="hold.php">Household</a></li>						 
-				<li><a href="codes.php">Short Codes</a></li> 
-				<li><a href="contact.php">Contact</a></li>
-			</ul>
-		</div>
-		<div class="col-md-3 footer-grid ">
-			<h3>Customer Services</h3>
-			<ul>
-				<li><a href="shipping.php">Shipping</a></li>
-				<li><a href="terms.php">Terms & Conditions</a></li>
-				<li><a href="faqs.php">Faqs</a></li>
-				<li><a href="contact.php">Contact</a></li>
-				<li><a href="offer.php">Online Shopping</a></li>						 
-				 
-			</ul>
-		</div>
-		<div class="col-md-3 footer-grid">
-			<h3>My Account</h3>
-			<ul>
-				<li><a href="login.php">Login</a></li>
-				<li><a href="register.php">Register</a></li>
-				<li><a href="wishlist.php">Wishlist</a></li>
-				
-			</ul>
-		</div>
+		
 		<div class="clearfix"></div>
 			<div class="footer-bottom">
 				<h2 ><a href="index.php"><b>T<br>H<br>E</b>Big Store<span>The Best Supermarket</span></a></h2>
-				<p class="fo-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+				
 				<ul class="social-fo">
 					<li><a href="#" class=" face"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 					<li><a href="#" class=" twi"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -188,13 +157,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</ul>
 				<div class=" address">
 					<div class="col-md-4 fo-grid1">
-							<p><i class="fa fa-home" aria-hidden="true"></i>12K Street , 45 Building Road Canada.</p>
+							<p><i class="fa fa-home" aria-hidden="true"></i>APU Street, Malaysia .</p>
 					</div>
 					<div class="col-md-4 fo-grid1">
-							<p><i class="fa fa-phone" aria-hidden="true"></i>+1234 758 839 , +1273 748 730</p>	
+							<p><i class="fa fa-phone" aria-hidden="true"></i>06-023667890</p>	
 					</div>
 					<div class="col-md-4 fo-grid1">
-						<p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>info@example1.com</a></p>
+						<p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>apubookstore.com</a></p>
 					</div>
 					<div class="clearfix"></div>
 					
@@ -283,7 +252,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						<div class="modal-body modal-spa">
 								<div class="col-md-5 span-2">
 											<div class="item">
-												<img src="images/of24.png" class="img-responsive" alt="">
+												<img src="images/<?php echo $book['book_id']; ?>.png" class="img-responsive" alt="">
 											</div>
 								</div>
 								<div class="col-md-7 span-1 ">
@@ -296,7 +265,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Book Description</h4>
 									<p class="quick_desc"><?php echo $book['book_description'];?></p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="24" data-name="Wheat" data-summary="summary 24" data-price="1.50" data-quantity="1" data-image="images/of24.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="<?php echo $book['book_id']; ?>" data-name="<?php echo $book ['book_name'];?>" data-summary="<?php echo $book ['book_name'];?>" data-price="<?php echo $book['book_price'];?>" data-quantity="1" data-image="images/<?php echo $book['book_id']; ?>.">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>

@@ -67,17 +67,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <body>
 <?php include 'include/header.php';
 ?>
-<div data-vide-bg="video/video">
+<div data-vide-bg="video/giphy.mp4">
     <div class="container">
 		<div class="banner-info">
 			<h3>It is a long established fact that a reader will be distracted by 
 
-			<div class="search-form">
-				<form action="#" method="post">
-					<input type="text" placeholder="Search..." name="Search...">
-					<input type="submit" value=" " >
-				</form>
-			</div>		
+			
 		</div>	
     </div>
 </div>
@@ -107,11 +102,14 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 								<div class="col-m">
 								
 								<a href="#" data-toggle="modal" data-target="#myModal<?php echo $book['book_id'];?>" class="offer-img">
-										<img src="untitled.png" class="img-responsive" alt="">
+										<?php if (file_exists("images/".$book['book_id'].".jpg")){
+											echo '<div><img src="images/'.$book['book_id'].'.jpg" style="height:128px;width:128px;border-radius:5px;"/></div>';
+										}
+										  ?>
 									</a>
 									<div class="mid-1">
 										<div class="women">
-											<h6><a href="single.php"><?php echo $book['book_name'];?></a></h6>							
+											<h6><a href="single.php?id=<?php echo $book['book_id'];?>"><?php echo $book['book_name'];?></a></h6>							
 										</div>
 										<div class="mid-2">
 											<p ><em class="item_price">RM <?php echo $book['book_price'];?></em></p>
@@ -121,7 +119,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<div class="clearfix"></div>
 										</div>
 											<div class="add add-2">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="images/of16.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="<?php echo $book['book_id'];?>" data-name="<?php echo $book['book_name'];?>" data-summary="summary 1" data-price="<?php echo $book['book_price'];?>" data-quantity="1" data-image="images/<?php echo $book['book_id'];?>.jpg">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -143,19 +141,11 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</div>
 	
 		
-		<div class="col-md-3 footer-grid">
-			<h3>My Account</h3>
-			<ul>
-				<li><a href="login.php">Login</a></li>
-				<li><a href="register.php">Register</a></li>
-				<li><a href="wishlist.php">Wishlist</a></li>
-				
-			</ul>
-		</div>
+	
 		<div class="clearfix"></div>
 			<div class="footer-bottom">
-				<h2 ><a href="index.php"><b>T<br>H<br>E</b>APU BOOK Store<span>APU BOOK STORE</span></a></h2>
-				<p class="fo-para">		</p>
+				<h2 ><a href="index.php"><b>T<br>H<br>E</b>Malaysia BOOK Store<span> Malaysia  BOOK STORE</span></a></h2>
+				<p class="fo-para"></p>
 				<ul class="social-fo">
 					<li><a href="#" class=" face"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 					<li><a href="#" class=" twi"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -164,13 +154,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</ul>
 				<div class=" address">
 					<div class="col-md-4 fo-grid1">
-							<p><i class="fa fa-home" aria-hidden="true"></i>12K Street , 45 Building Road Canada.</p>
+							<p><i class="fa fa-home" aria-hidden="true"></i>APU 13 Street, Malaysia</p>
 					</div>
 					<div class="col-md-4 fo-grid1">
-							<p><i class="fa fa-phone" aria-hidden="true"></i>+1234 758 839 , +1273 748 730</p>	
+							<p><i class="fa fa-phone" aria-hidden="true"></i>06-023667890</p>	
 					</div>
 					<div class="col-md-4 fo-grid1">
-						<p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>info@example1.com</a></p>
+						<p><a href="mailto:info@example.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>apubookstore.com</a></p>
 					</div>
 					<div class="clearfix"></div>
 					
