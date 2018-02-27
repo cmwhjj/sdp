@@ -1,9 +1,9 @@
 <?php
-	
+	session_start();
 	include "include/connection.php";
 	$book_id = $_GET['id'];
-	
 	//$book_name = mysqli_fetch_array($book_result)['book_name'];
+	
 	
 ?>
 <!DOCTYPE html>
@@ -75,7 +75,23 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 </head>
 <body>
-<?php include 'include/header.php'; ?>
+<?php include 'include/header.php'; 
+	if($_SERVER['REQUEST_METHOD']=="POST"){
+	include_once "include/connection.php";
+	echo $_SESSION['mySession'];
+
+
+$sql="INSERT INTO feedback (customer_id, book_id, feedback_text,feedback_scale) VALUES ($_SESSION[mySession],$book_id,'$_POST[comment]',$_POST[rate])";
+
+if (!mysqli_query($con,$sql))
+{
+die('Error: ' . mysqli_error($con));
+}
+	}
+
+
+?>
+
   <!---->
  <!--banner-->
 <div class="banner-top">
@@ -181,7 +197,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</tr>
 			<tr>
 			<th>
-			<input name="comment" type="text" />
+			<textarea name="comment"></textarea><br>
+			<select name="rate">
+				<?php for($i = 1 ; $i <11 ; $i++)
+				 echo '<option value="'.$i.'">'.$i.'</option>';
+				 ?>
+			</select> 
 			</th>
 			</tr>
 			<tr>

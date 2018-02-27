@@ -1,5 +1,6 @@
 <?php
 	include "include/connection.php";
+	session_start();
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$username = $_POST['Username'];
 		$password = md5($_POST['Password']);

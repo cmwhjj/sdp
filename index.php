@@ -1,4 +1,5 @@
 <?php
+session_start();
 	include "include/connection.php";
 	$book_result = mysqli_query($con, "SELECT * FROM book ORDER BY book_id DESC LIMIT 8");
 
@@ -66,6 +67,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </head>
 <body>
 <?php include 'include/header.php';
+
+	echo $_SESSION['mySession'];
 ?>
 <div data-vide-bg="video/giphy.mp4">
     <div class="container">
