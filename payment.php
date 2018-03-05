@@ -1,19 +1,18 @@
 <?php
+ 
+ session_start();
+
 	include "include/connection.php";
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
-		$username = $_POST['Username'];
-		$password = md5($_POST['Password']);
-		$login_result = mysqli_query($con, "SELECT * FROM customers WHERE customer_username LIKE '$username' AND customer_password LIKE '$password'");
-		$customer_id = mysqli_fetch_assoc($login_result)['customer_id'];
-		mysqli_query($con,"INSERT INTO loginrecord(customer_id,login_success) VALUES ($customer_id,1)");
-		if (mysqli_affected_rows($con) > 0) {
-			$_SESSION['mySession']= $customer_id;
-			echo '<script>window.location.replace("index.php");</script>';	
-		} else {
-			echo '<script>alert("Incorrect username or password");</script>';
+		if (isset($_POST['products'])) {
+			$customer_id = $_SESSION['mySession'];
+			$order_result = mysqli_query($con, "INSERT INTO `order`(customer_id) VALUES ('$customer_id')");
+			$order_id= mysqli_insert_id($con);
+			$p = json_decode(str_replace("'", '"', $_POST['products']), true);
+			foreach ($p as $product_id => $quantity) {
+				mysqli_query($con, "INSERT INTO `orderdetail` VALUES ($order_id, $product_id, $quantity)");
+			}
 		}
-		
-
 	}
 ?>
 <!DOCTYPE html>
@@ -110,6 +109,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						    <input  type="text" value="Credit Card Number" name="Credit Card Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" required="">
 							<div class="clearfix"></div>
 						</div>
+						<input type="hidden" value="<?php echo str_replace('"', '\'', json_encode($_POST)); ?>" name="products" />
 						<input type="submit" value="Confirm">
 					</form>
 				</div>

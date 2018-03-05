@@ -180,7 +180,7 @@
 
     if(!$("#" + idCartModal).length) {
       $('body').append(
-        '<div class="modal fade" id="' + idCartModal + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' +
+        '<form method="POST" action="payment.php"><div class="modal fade" id="' + idCartModal + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">' +
         '<div class="modal-dialog" role="document">' +
         '<div class="modal-content">' +
         '<div class="modal-header">' +
@@ -191,12 +191,12 @@
         '<table class="table table-hover table-responsive" id="' + idCartTable + '"></table>' +
         '</div>' +
         '<div class="modal-footer">' +
-        '<button type="button" class="btn btn-default" onclick="window.location.replace(\'payment.php\')">Proceed to Payment</button>' +
+        '<button class="btn btn-default">Proceed to Payment</button>' +
 
         '</div>' +
         '</div>' +
         '</div>' +
-        '</div>'
+        '</div></form>'
       );
     }
 
@@ -212,10 +212,11 @@
           '<td class="text-center" style="width: 30px;"><img width="30px" height="30px" src="' + this.image + '"/></td>' +
           '<td>' + this.name + '</td>' +
           '<td title="Unit Price">RM' + this.price + '</td>' +
-          '<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="' + classProductQuantity + '" value="' + this.quantity + '"/></td>' +
+          '<td title="Quantity"><input type="text" min="1" style="width: 70px;" class="' + classProductQuantity + '" value="' + this.quantity + '" disabled/></td>' +
           '<td title="Total" class="' + classProductTotal + '">RM' + total + '</td>' +
           '<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger ' + classProductRemove + '">X</a></td>' +
-          '</tr>'
+          '</tr>' +
+		  '<input type="hidden" name="' + this.id + '" value="' + this.quantity + '" />'
         );
       });
 
@@ -225,7 +226,7 @@
         '<td><strong>Total</strong></td>' +
         '<td></td>' +
         '<td></td>' +
-        '<td><strong id="' + idGrandTotal + '">$</strong></td>' +
+        '<td><strong id="' + idGrandTotal + '">RM</strong></td>' +
         '<td></td>' +
         '</tr>'
         : '<div class="alert alert-danger" role="alert" id="' + idEmptyCartMessage + '">Your cart is empty</div>'

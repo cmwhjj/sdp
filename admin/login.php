@@ -1,8 +1,10 @@
 <!--log in coding-->
 
 <?php
-include "include/connection.php";   session_start();
+
+session_start();
    
+include "include/connection.php";   
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       

@@ -122,7 +122,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<div class="clearfix"></div>
 										</div>
 											<div class="add add-2">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="<?php echo $book['book_id'];?>" data-name="<?php echo $book['book_name'];?>" data-summary="summary 1" data-price="<?php echo $book['book_price'];?>" data-quantity="1" data-image="images/<?php echo $book['book_id'];?>.jpg">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="<?php echo $book['book_id'];?>" data-name="<?php echo $book['book_name'];?>" data-summary="<?php echo $book['book_id'];?>" data-price="<?php echo $book['book_price'];?>" data-quantity="1" data-image="images/<?php echo $book['book_id'];?>.jpg">Add to Cart</button>
 										</div>
 									</div>
 								</div>

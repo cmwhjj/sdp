@@ -4,10 +4,10 @@
 <title>Welcome TPM BookStore</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../../assignment/w3.css">
-<link rel="stylesheet" href="../../assignment/w3-theme-blue-grey.css">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-blue-grey.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<link rel="stylesheet" href="../../assignment/font-awesome.min.css">
+<link rel="stylesheet" href="font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>

@@ -33,7 +33,7 @@
 					?>
 					
 					
-					<li><a href="about.php" ><i class="fa fa-file-text-o" aria-hidden="true"></i>Order History</a></li>
+					
 			
 				</ul>	
 			</div>

@@ -27,9 +27,9 @@ echo "Report Date : " . date("d/m/Y") . "<br>";
               		<th width="90"><div align="center">Order ID</div></th>
 					<th width="80"><div align="center">Customer ID</div></th>
 					<th width="200"><div align="center">Order Time</div></th>
-					<th width="60"><div align="center">Order Status</div></th>
-					
-					
+					<th width="60"><div align="center">Book ID</div></th>
+					<th width="60"><div align="center">Book Name</div></th>
+					<th width="60"><div align="center">Book Quantity</div></th>
             </tr>
           </thead>
           <tbody>
@@ -37,15 +37,16 @@ echo "Report Date : " . date("d/m/Y") . "<br>";
 			   session_start();
 			   include('../include/connection.php');
 								
-					$result = mysqli_query($con,"SELECT * FROM `order`");	
+					$result = mysqli_query($con,"SELECT * FROM `order` INNER JOIN orderdetail ON `order`.`order_id`=orderdetail.order_id INNER JOIN book ON orderdetail.book_id = book.book_id");	
 								
 					while($row = mysqli_fetch_array($result))
 					 {					
 									echo '<td><div align="center">'.$row['order_id'].'</div></td>';
 									echo '<td><div align="center">'.$row['customer_id'].'</div></td>';
 									echo '<td><div align="center">'.$row['order_at'].'</div></td>';
-									echo '<td><div align="center">'.$row['order_status'].'</div></td>';
-									
+									echo '<td><div align="center">'.$row['book_id'].'</div></td>';
+									echo '<td><div align="center">'.$row['book_name'].'</div></td>';
+									echo '<td><div align="center">'.$row['book_quantity'].'</div></td>';
 									echo '</tr>';
 								}
 								  

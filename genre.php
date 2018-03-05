@@ -6,6 +6,7 @@
 	$genre_name = mysqli_fetch_array($genre_result)['genre_name'];
 	
 	$book_result = mysqli_query($con, "SELECT * FROM book WHERE genre_id = " . $genre_id);
+	
 ?>
 <!DOCTYPE html>
 <html>

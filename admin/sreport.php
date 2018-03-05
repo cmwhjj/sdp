@@ -27,7 +27,8 @@ else
 
 	
 	}
-	
+		
+
 ?>
 
 <!DOCTYPE html>
@@ -118,7 +119,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             <!--order report-->
 <?php
 
-$aaa = mysqli_query($con,"SELECT * FROM `order`");
+$aaa = mysqli_query($con,"SELECT * FROM `order` INNER JOIN orderdetail ON `order`.`order_id`=orderdetail.order_id INNER JOIN book ON orderdetail.book_id = book.book_id");
+
 
 ?>
 
@@ -134,9 +136,14 @@ $aaa = mysqli_query($con,"SELECT * FROM `order`");
  <p>Order Time</p>
  </th>
  <th>
- <p>Order Status</p>
+ <p>Book ID</p>
  </th>
- 
+ <th>
+ <p>Book Name</p>
+ </th>
+ <th>
+ <p>Book Quantity</p>
+ </th>
  </tr>
  
    
@@ -169,7 +176,19 @@ echo "</td>";
 
 echo "<td>";
 echo "<h4>";
-echo $rows['order_status'];
+echo $rows['book_id'];
+echo "</h4>";
+echo "</td>";
+
+echo "<td>";
+echo "<h4>";
+echo $rows['book_name'];
+echo "</h4>";
+echo "</td>";
+
+echo "<td>";
+echo "<h4>";
+echo $rows['book_quantity'];
 echo "</h4>";
 echo "</td>";
 
