@@ -68,12 +68,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <body>
 <?php include 'include/header.php';
 
-	echo $_SESSION['mySession'];
+	if (isset($_SESSION['mySession'])) echo $_SESSION['mySession'];
 ?>
 <div data-vide-bg="video/giphy.mp4">
     <div class="container">
 		<div class="banner-info">
-			<h3>It is a long established fact that a reader will be distracted by 
+			<h3>Welcome to APU BOOK STORE
 
 			
 		</div>	

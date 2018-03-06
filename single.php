@@ -194,7 +194,7 @@ die('Error: ' . mysqli_error($con));
 			<th>
 			Comment:
 			</th>
-			</tr>
+			</tr> 
 			<tr>
 			<th>
 			<textarea name="comment"></textarea><br>
@@ -236,23 +236,10 @@ die('Error: ' . mysqli_error($con));
 										<div class="mid-2">
 											<p ><?php echo $book['feedback_scale'];?></p>
 											  <div class="block">
-												
-
-											</div>
-											<div class="clearfix"></div>
-										</div>
-											<!--<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="5" data-name="MazeRunner" data-summary="summary 5" data-price="RM5" data-quantity="1" data-image="images/maze.png">Add to Cart</button>
-										</div>-->
-									</div>
-								</div>
-							</div>
-							<?php endwhile;?>
-							
-							<div class=" con-w3l wthree-of">
+												<div class=" con-w3l wthree-of">
 							<?php 
 			include 'include/connection.php'; 
-			$book_result = mysqli_query($con, "SELECT * FROM feedback INNER JOIN customers ON feedback.customer_id = customers.customer_id INNER JOIN rating ON customers.customer_id= rating.customer_id WHERE feedback.book_id=" . $book_id);
+			$book_result = mysqli_query($con, "SELECT * FROM feedback INNER JOIN customers ON feedback.customer_id = customers.customer_id WHERE feedback.book_id=" . $book_id);
 			while ($book = mysqli_fetch_array($book_result)): ?>
 					
 							<div class="col-md-3 pro-1">
@@ -268,6 +255,8 @@ die('Error: ' . mysqli_error($con));
 										<div class="mid-2">
 											<p ><?php echo $book['feedback_scale'];?></p>
 											  <div class="block">
+											  
+											  
 												<form method="post" id="form'.$row['customer_id'].'"><select name="trust" onChange="submit('.$row['customer_id'].')">
 		<option value=""';if($row['rating_scale']==""){echo'';}echo'></option>
 		<option value="1"';if($row['rating_scale']=="1"){echo'1';}echo'>1</option>
@@ -302,16 +291,17 @@ die('Error: ' . mysqli_error($con));
 							<div class="clearfix"></div>
 						 </div>
 							
-							
-							
-							
-							
-							
-							
-							
-							
-							
 
+											</div>
+											<div class="clearfix"></div>
+										</div>
+											<!--<div class="add">
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="5" data-name="MazeRunner" data-summary="summary 5" data-price="RM5" data-quantity="1" data-image="images/maze.png">Add to Cart</button>
+										</div>-->
+									</div>
+								</div>
+							</div>
+							<?php endwhile;?>
 							
 							
 							<div class="clearfix"></div>

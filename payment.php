@@ -82,7 +82,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <div class="banner-top">
 	<div class="container">
 		<h3 >Payment</h3>
-		<h4><a href="index.php">Home</a><label>/</label></h4>
+		<h4><a href="index.php">Home</a><label>/</label>Payment</h4>
 		<div class="clearfix"> </div>
 	</div>
 </div>

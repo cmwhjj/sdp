@@ -256,10 +256,10 @@
       });
     }
     var showGrandTotal = function(){
-      $("#" + idGrandTotal).text("$" + ProductManager.getTotalPrice());
+      $("#" + idGrandTotal).text("RM" + ProductManager.getTotalPrice());
     }
     var showDiscountPrice = function(){
-      $("#" + idDiscountPrice).text("$" + options.getDiscountPrice(ProductManager.getAllProducts(), ProductManager.getTotalPrice(), ProductManager.getTotalQuantity()));
+      $("#" + idDiscountPrice).text("RM" + options.getDiscountPrice(ProductManager.getAllProducts(), ProductManager.getTotalPrice(), ProductManager.getTotalQuantity()));
     }
 
     /*
@@ -286,7 +286,7 @@
       var id = $(this).closest("tr").data("id");
       var quantity = $(this).val();
 
-      $(this).parent("td").next("." + classProductTotal).text("$" + price * quantity);
+      $(this).parent("td").next("." + classProductTotal).text("RM" + price * quantity);
       ProductManager.updatePoduct(id, quantity);
 
       $cartBadge.text(ProductManager.getTotalQuantity());

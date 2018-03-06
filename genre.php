@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 	include "include/connection.php";
 	
 	$genre_id = $_GET['id'];
